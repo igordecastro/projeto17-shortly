@@ -20,7 +20,7 @@ export default async function authValidate(req, res, next) {
     req.validUser = user.rows[0];
   } catch (err) {
     console.log(err);
-    res.sendStatus(500);
+    res.status(500).send(err.message);
   }
 
   next();
